@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Database connection
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/team-schedule';
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 10000, useFindAndModify: false, useCreateIndex: true })
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 10000 })
   .then(() => console.log('Successfully connected to MongoDB'))
   .catch(err => console.log(err));
 
