@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/team-schedule', { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 10000, useFindAndModify: false, useCreateIndex: true })
-  .then(() => console.log('MongoDB connected...'))
+  .then(() => console.log('Successfully connected to MongoDB'))
   .catch(err => console.log(err));
 
 // Error handling middleware
