@@ -13,6 +13,12 @@ mongoose.connect('mongodb://localhost:27017/team-schedule', { useNewUrlParser: t
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).send('Something broke!');
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
