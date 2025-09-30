@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/team-schedule', { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 10000, useFindAndModify: false })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/team-schedule', { useNewUrlParser: true, useUnifiedTopology: true, connectTimeoutMS: 10000, useFindAndModify: false, useCreateIndex: true })
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
 
